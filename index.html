@@ -607,6 +607,8 @@
 
         // Audio Player Toggle Logic
         let isPlaying = false;
+        let wasPlayingBeforeHide = false;
+
         function toggleMusic() {
           const audio = document.getElementById('wedding-audio');
           const playingIcon = document.getElementById('music-playing-icon');
@@ -617,17 +619,56 @@
           if (isPlaying) {
             audio.pause();
             isPlaying = false;
+            wasPlayingBeforeHide = false;
             playingIcon?.classList.add('hidden');
             pausedIcon?.classList.remove('hidden');
           } else {
             audio.play().then(() => {
               isPlaying = true;
+              wasPlayingBeforeHide = false;
               playingIcon?.classList.remove('hidden');
               pausedIcon?.classList.add('hidden');
             }).catch(() => {
               // Autoplay prevented by browser policy
             });
           }
+        }
+
+        function pauseMusicOnLeave() {
+          const audio = document.getElementById('wedding-audio');
+          const playingIcon = document.getElementById('music-playing-icon');
+          const pausedIcon = document.getElementById('music-paused-icon');
+
+          if (!audio) return;
+
+          if (isPlaying || !audio.paused) {
+            wasPlayingBeforeHide = true;
+            audio.pause();
+            isPlaying = false;
+            playingIcon?.classList.add('hidden');
+            pausedIcon?.classList.remove('hidden');
+          }
+        }
+
+        function resumeMusicOnReturn() {
+          if (!isEnvelopeOpened || !wasPlayingBeforeHide || document.hidden) return;
+
+          const audio = document.getElementById('wedding-audio');
+          const playingIcon = document.getElementById('music-playing-icon');
+          const pausedIcon = document.getElementById('music-paused-icon');
+
+          if (!audio) return;
+
+          wasPlayingBeforeHide = false;
+          audio.play().then(() => {
+            isPlaying = true;
+            playingIcon?.classList.remove('hidden');
+            pausedIcon?.classList.add('hidden');
+          }).catch(() => {
+            isPlaying = false;
+            playingIcon?.classList.add('hidden');
+            pausedIcon?.classList.remove('hidden');
+          });
         }
 
         // Golden Sparkles Particle Burst Effect
@@ -907,6 +948,20 @@
           document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeGiftModal();
           });
+
+          // Pause music automatically when user leaves the invitation tab/app, and resume when returning
+          document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+              pauseMusicOnLeave();
+            } else {
+              resumeMusicOnReturn();
+            }
+          });
+          window.addEventListener('blur', pauseMusicOnLeave);
+          window.addEventListener('focus', resumeMusicOnReturn);
+          window.addEventListener('pagehide', pauseMusicOnLeave);
+          window.addEventListener('pageshow', resumeMusicOnReturn);
+          window.addEventListener('beforeunload', pauseMusicOnLeave);
         });
       })();
   </script>
