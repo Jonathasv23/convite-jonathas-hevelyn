@@ -207,8 +207,8 @@
       aria-label="Capa do Convite de Casamento - Jonathas e Hevelyn. Clique em qualquer parte para abrir o convite."
       class="relative w-full z-50 envelope-cover-wrapper shadow-2xl cursor-pointer select-none">
 
-      <img id="cover-image" src="capa_oficial_4k.webp"
-        alt="Convite de Casamento - Jonathas & Hevelyn" class="cover-img-sharp" draggable="false" />
+      <img id="cover-image" src="capa_oficial_4k.webp" alt="Convite de Casamento - Jonathas & Hevelyn"
+        class="cover-img-sharp" draggable="false" />
 
     </section>
 
@@ -378,8 +378,7 @@
         </a>
 
         <!-- Button 2: Confirmar Presença (WhatsApp RSVP) -->
-        <a id="whatsapp-rsvp-link" href="#confirmar-presenca"
-          target="_blank" rel="noopener noreferrer"
+        <a id="whatsapp-rsvp-link" href="#confirmar-presenca" target="_blank" rel="noopener noreferrer"
           class="w-full flex items-center gap-4 p-4 rounded-xl bg-white shadow-sm hover:shadow-md border border-stone-200/90 transition-all duration-300 group hover:border-gold-500/70 active:scale-[0.99]">
           <div
             class="w-11 h-11 rounded-full bg-deepolive-900 text-gold-300 flex items-center justify-center group-hover:bg-deepolive-800 transition-colors shadow-inner flex-shrink-0">
@@ -489,7 +488,7 @@
             <div class="flex items-center justify-between">
               <span class="text-[10px] uppercase font-cinzel text-stone-400">Chave PIX (Telefone):</span>
               <span id="pix-key-display" class="font-mono text-sm font-semibold text-deepolive-900"
-                 translate="no">•••</span>
+                translate="no">•••</span>
             </div>
             <div class="text-[11px] text-stone-600 pt-1 border-t border-stone-200/60">
               <span class="font-medium text-stone-700">Favorecido:</span> <span id="pix-holder-display"
@@ -521,12 +520,12 @@
               Presentes</h4>
           </div>
           <p class="font-montserrat text-xs text-stone-600 mb-3.5 leading-relaxed">
-            Acesse nossa lista virtual de casamentos no Final Feliz:
+            Fique à vontade para acessar nossa lista virtual de presentes do casamento:
           </p>
 
           <a href="https://www.finalfeliz.de/hevelyn-costa--jonathas-vieira" target="_blank" rel="noopener noreferrer"
             class="w-full py-2.5 px-4 bg-white hover:bg-stone-50 text-deepolive-900 rounded-lg text-xs font-cinzel font-semibold tracking-wider uppercase transition-all duration-200 shadow-sm border border-deepolive-800/40 flex items-center justify-center gap-2">
-            <span>Acessar Lista no Final Feliz</span>
+            <span>Acessar Lista de Presentes</span>
             <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
@@ -560,356 +559,356 @@
        VANILLA JS LOGIC (ENCAPSULATED & HARDENED)
        ========================================== -->
   <script>
-    (function () {
-      'use strict';
+      (function () {
+        'use strict';
 
-      // Obfuscated personal data (Anti-Scraper / Anti-Bot protection on public repos)
-      const SECURE_DATA = Object.freeze({
-        pixDisplay: 'KDExKSA5NjYyMS04NTEw',
-        pixRaw: 'MTE5NjYyMTg1MTA=',
-        pixHolder: 'Sm9uYXRoYXMgVmllaXJhIEJhdGlzdGEgZGFzIERvcmVz',
-        pixBank: 'QmFuY28gTmVvbg==',
-        waPhone: 'NTUxMTk3Mzk5Njc0NQ=='
-      });
-
-      function decodeSafe(b64) {
-        try {
-          return window.atob(b64);
-        } catch (e) {
-          return '';
-        }
-      }
-
-      function hydrateProtectedData() {
-        const pixDisplayEl = document.getElementById('pix-key-display');
-        const pixHolderEl = document.getElementById('pix-holder-display');
-        const pixBankEl = document.getElementById('pix-bank-display');
-        const waLinkEl = document.getElementById('whatsapp-rsvp-link');
-
-        if (pixDisplayEl) pixDisplayEl.textContent = decodeSafe(SECURE_DATA.pixDisplay);
-        if (pixHolderEl) pixHolderEl.textContent = decodeSafe(SECURE_DATA.pixHolder);
-        if (pixBankEl) pixBankEl.textContent = decodeSafe(SECURE_DATA.pixBank);
-
-        if (waLinkEl) {
-          const phone = decodeSafe(SECURE_DATA.waPhone);
-          const textoWhatsapp = 'Olá, Hevelyn e Jonathas! Gostaria de confirmar minha presença no casamento de vocês no dia 30/01/2027, às 15h. Será uma alegria e um privilégio enorme celebrar esse dia tão especial ao lado de vocês! 🤵👰✨';
-          waLinkEl.setAttribute('href', 'https://wa.me/' + phone + '?text=' + encodeURIComponent(textoWhatsapp));
-        }
-      }
-
-      // Cover image fallback handler
-      const coverImg = document.getElementById('cover-image');
-      if (coverImg) {
-        coverImg.addEventListener('error', function handleImgError() {
-          coverImg.removeEventListener('error', handleImgError);
-          coverImg.src = 'capa_oficial_4k.jpg';
+        // Obfuscated personal data (Anti-Scraper / Anti-Bot protection on public repos)
+        const SECURE_DATA = Object.freeze({
+          pixDisplay: 'KDExKSA5NjYyMS04NTEw',
+          pixRaw: 'MTE5NjYyMTg1MTA=',
+          pixHolder: 'Sm9uYXRoYXMgVmllaXJhIEJhdGlzdGEgZGFzIERvcmVz',
+          pixBank: 'QmFuY28gTmVvbg==',
+          waPhone: 'NTUxMTk3Mzk5Njc0NQ=='
         });
-      }
 
-      // Audio Player Toggle Logic
-      let isPlaying = false;
-      function toggleMusic() {
-        const audio = document.getElementById('wedding-audio');
-        const playingIcon = document.getElementById('music-playing-icon');
-        const pausedIcon = document.getElementById('music-paused-icon');
-
-        if (!audio) return;
-
-        if (isPlaying) {
-          audio.pause();
-          isPlaying = false;
-          playingIcon?.classList.add('hidden');
-          pausedIcon?.classList.remove('hidden');
-        } else {
-          audio.play().then(() => {
-            isPlaying = true;
-            playingIcon?.classList.remove('hidden');
-            pausedIcon?.classList.add('hidden');
-          }).catch(() => {
-            // Autoplay prevented by browser policy
-          });
-        }
-      }
-
-      // Golden Sparkles Particle Burst Effect
-      function triggerSparklesBurst(x, y) {
-        const canvas = document.getElementById('particles-canvas');
-        if (!canvas) return;
-
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const particles = [];
-        const colors = ['#E5C158', '#FBF0D3', '#D4A83B', '#FFFFFF'];
-
-        for (let i = 0; i < 45; i++) {
-          particles.push({
-            x: x || window.innerWidth / 2,
-            y: y || window.innerHeight / 2,
-            radius: Math.random() * 3.5 + 1,
-            color: colors[Math.floor(Math.random() * colors.length)],
-            vx: (Math.random() - 0.5) * 8,
-            vy: (Math.random() - 0.5) * 8 - 2,
-            alpha: 1,
-            decay: Math.random() * 0.02 + 0.015
-          });
-        }
-
-        function animate() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          let active = false;
-
-          particles.forEach(p => {
-            if (p.alpha > 0) {
-              active = true;
-              p.x += p.vx;
-              p.y += p.vy;
-              p.alpha -= p.decay;
-
-              ctx.save();
-              ctx.globalAlpha = Math.max(0, p.alpha);
-              ctx.beginPath();
-              ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-              ctx.fillStyle = p.color;
-              ctx.shadowBlur = 8;
-              ctx.shadowColor = p.color;
-              ctx.fill();
-              ctx.restore();
-            }
-          });
-
-          if (active) {
-            requestAnimationFrame(animate);
-          } else {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        function decodeSafe(b64) {
+          try {
+            return window.atob(b64);
+          } catch (e) {
+            return '';
           }
         }
-        animate();
-      }
 
-      // Function to open the virtual envelope
-      let isEnvelopeOpened = false;
-      function openInvitation(event) {
-        if (isEnvelopeOpened) return;
-        isEnvelopeOpened = true;
+        function hydrateProtectedData() {
+          const pixDisplayEl = document.getElementById('pix-key-display');
+          const pixHolderEl = document.getElementById('pix-holder-display');
+          const pixBankEl = document.getElementById('pix-bank-display');
+          const waLinkEl = document.getElementById('whatsapp-rsvp-link');
 
-        const envelope = document.getElementById('envelope-screen');
-        const mainContent = document.getElementById('invitation-content');
-        const musicBtn = document.getElementById('music-toggle-btn');
+          if (pixDisplayEl) pixDisplayEl.textContent = decodeSafe(SECURE_DATA.pixDisplay);
+          if (pixHolderEl) pixHolderEl.textContent = decodeSafe(SECURE_DATA.pixHolder);
+          if (pixBankEl) pixBankEl.textContent = decodeSafe(SECURE_DATA.pixBank);
 
-        if (mainContent) {
-          mainContent.classList.remove('hidden');
+          if (waLinkEl) {
+            const phone = decodeSafe(SECURE_DATA.waPhone);
+            const textoWhatsapp = 'Olá, Hevelyn e Jonathas! Gostaria de confirmar minha presença no casamento de vocês no dia 30/01/2027, às 15h. Será uma alegria e um privilégio enorme celebrar esse dia tão especial ao lado de vocês! 🤵👰✨';
+            waLinkEl.setAttribute('href', 'https://wa.me/' + phone + '?text=' + encodeURIComponent(textoWhatsapp));
+          }
         }
 
-        if (envelope) {
-          envelope.style.position = 'fixed';
-          envelope.style.inset = '0';
-          envelope.style.maxWidth = '430px';
-          envelope.style.margin = '0 auto';
-          envelope.classList.add('opened');
-          setTimeout(() => {
-            envelope.style.display = 'none';
-          }, 900);
-        }
-
-        window.scrollTo({ top: 0, behavior: 'instant' });
-
-        // Sparkles burst at click position
-        let clickX = window.innerWidth / 2;
-        let clickY = window.innerHeight * 0.412;
-
-        if (event && event.clientX && event.clientY) {
-          clickX = event.clientX;
-          clickY = event.clientY;
-        }
-        triggerSparklesBurst(clickX, clickY);
-
-        // Show music button & attempt soft autoplay
-        if (musicBtn) {
-          setTimeout(() => {
-            musicBtn.classList.remove('opacity-0', 'pointer-events-none');
-            musicBtn.classList.add('opacity-100');
-          }, 500);
-        }
-
-        // Try autoplaying soft audio on user click
-        const audio = document.getElementById('wedding-audio');
-        if (audio) {
-          audio.volume = 0.4;
-          audio.play().then(() => {
-            isPlaying = true;
-            document.getElementById('music-playing-icon')?.classList.remove('hidden');
-            document.getElementById('music-paused-icon')?.classList.add('hidden');
-          }).catch(() => {
-            // Autoplay fallback
+        // Cover image fallback handler
+        const coverImg = document.getElementById('cover-image');
+        if (coverImg) {
+          coverImg.addEventListener('error', function handleImgError() {
+            coverImg.removeEventListener('error', handleImgError);
+            coverImg.src = 'capa_oficial_4k.jpg';
           });
         }
 
-        // Trigger scroll reveal for visible items
-        setTimeout(checkScrollReveal, 300);
-      }
+        // Audio Player Toggle Logic
+        let isPlaying = false;
+        function toggleMusic() {
+          const audio = document.getElementById('wedding-audio');
+          const playingIcon = document.getElementById('music-playing-icon');
+          const pausedIcon = document.getElementById('music-paused-icon');
 
-      // Live Countdown Clock Logic (Target: 30 Jan 2027, 15:00)
-      function initCountdown() {
-        const targetDate = new Date('2027-01-30T15:00:00-03:00').getTime();
+          if (!audio) return;
 
-        function updateTimer() {
-          const now = new Date().getTime();
-          const difference = targetDate - now;
+          if (isPlaying) {
+            audio.pause();
+            isPlaying = false;
+            playingIcon?.classList.add('hidden');
+            pausedIcon?.classList.remove('hidden');
+          } else {
+            audio.play().then(() => {
+              isPlaying = true;
+              playingIcon?.classList.remove('hidden');
+              pausedIcon?.classList.add('hidden');
+            }).catch(() => {
+              // Autoplay prevented by browser policy
+            });
+          }
+        }
 
-          const daysEl = document.getElementById('timer-days');
-          const hoursEl = document.getElementById('timer-hours');
-          const minsEl = document.getElementById('timer-minutes');
-          const secsEl = document.getElementById('timer-seconds');
+        // Golden Sparkles Particle Burst Effect
+        function triggerSparklesBurst(x, y) {
+          const canvas = document.getElementById('particles-canvas');
+          if (!canvas) return;
 
-          if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+          const ctx = canvas.getContext('2d');
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
 
-          if (difference <= 0) {
-            daysEl.textContent = '00';
-            hoursEl.textContent = '00';
-            minsEl.textContent = '00';
-            secsEl.textContent = '00';
+          const particles = [];
+          const colors = ['#E5C158', '#FBF0D3', '#D4A83B', '#FFFFFF'];
+
+          for (let i = 0; i < 45; i++) {
+            particles.push({
+              x: x || window.innerWidth / 2,
+              y: y || window.innerHeight / 2,
+              radius: Math.random() * 3.5 + 1,
+              color: colors[Math.floor(Math.random() * colors.length)],
+              vx: (Math.random() - 0.5) * 8,
+              vy: (Math.random() - 0.5) * 8 - 2,
+              alpha: 1,
+              decay: Math.random() * 0.02 + 0.015
+            });
+          }
+
+          function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            let active = false;
+
+            particles.forEach(p => {
+              if (p.alpha > 0) {
+                active = true;
+                p.x += p.vx;
+                p.y += p.vy;
+                p.alpha -= p.decay;
+
+                ctx.save();
+                ctx.globalAlpha = Math.max(0, p.alpha);
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = p.color;
+                ctx.fill();
+                ctx.restore();
+              }
+            });
+
+            if (active) {
+              requestAnimationFrame(animate);
+            } else {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+          }
+          animate();
+        }
+
+        // Function to open the virtual envelope
+        let isEnvelopeOpened = false;
+        function openInvitation(event) {
+          if (isEnvelopeOpened) return;
+          isEnvelopeOpened = true;
+
+          const envelope = document.getElementById('envelope-screen');
+          const mainContent = document.getElementById('invitation-content');
+          const musicBtn = document.getElementById('music-toggle-btn');
+
+          if (mainContent) {
+            mainContent.classList.remove('hidden');
+          }
+
+          if (envelope) {
+            envelope.style.position = 'fixed';
+            envelope.style.inset = '0';
+            envelope.style.maxWidth = '430px';
+            envelope.style.margin = '0 auto';
+            envelope.classList.add('opened');
+            setTimeout(() => {
+              envelope.style.display = 'none';
+            }, 900);
+          }
+
+          window.scrollTo({ top: 0, behavior: 'instant' });
+
+          // Sparkles burst at click position
+          let clickX = window.innerWidth / 2;
+          let clickY = window.innerHeight * 0.412;
+
+          if (event && event.clientX && event.clientY) {
+            clickX = event.clientX;
+            clickY = event.clientY;
+          }
+          triggerSparklesBurst(clickX, clickY);
+
+          // Show music button & attempt soft autoplay
+          if (musicBtn) {
+            setTimeout(() => {
+              musicBtn.classList.remove('opacity-0', 'pointer-events-none');
+              musicBtn.classList.add('opacity-100');
+            }, 500);
+          }
+
+          // Try autoplaying soft audio on user click
+          const audio = document.getElementById('wedding-audio');
+          if (audio) {
+            audio.volume = 0.4;
+            audio.play().then(() => {
+              isPlaying = true;
+              document.getElementById('music-playing-icon')?.classList.remove('hidden');
+              document.getElementById('music-paused-icon')?.classList.add('hidden');
+            }).catch(() => {
+              // Autoplay fallback
+            });
+          }
+
+          // Trigger scroll reveal for visible items
+          setTimeout(checkScrollReveal, 300);
+        }
+
+        // Live Countdown Clock Logic (Target: 30 Jan 2027, 15:00)
+        function initCountdown() {
+          const targetDate = new Date('2027-01-30T15:00:00-03:00').getTime();
+
+          function updateTimer() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            const daysEl = document.getElementById('timer-days');
+            const hoursEl = document.getElementById('timer-hours');
+            const minsEl = document.getElementById('timer-minutes');
+            const secsEl = document.getElementById('timer-seconds');
+
+            if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+            if (difference <= 0) {
+              daysEl.textContent = '00';
+              hoursEl.textContent = '00';
+              minsEl.textContent = '00';
+              secsEl.textContent = '00';
+              return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            daysEl.textContent = String(days).padStart(2, '0');
+            hoursEl.textContent = String(hours).padStart(2, '0');
+            minsEl.textContent = String(minutes).padStart(2, '0');
+            secsEl.textContent = String(seconds).padStart(2, '0');
+          }
+
+          updateTimer();
+          setInterval(updateTimer, 1000);
+        }
+
+        // Scroll Reveal Logic
+        function checkScrollReveal() {
+          const reveals = document.querySelectorAll('.reveal-on-scroll');
+          const windowHeight = window.innerHeight;
+
+          reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 40) {
+              el.classList.add('is-visible');
+            }
+          });
+        }
+
+        // Gift Modal Logic
+        function openGiftModal() {
+          const modal = document.getElementById('gift-modal');
+          const card = document.getElementById('gift-modal-card');
+          if (modal && card) {
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+            card.classList.remove('scale-95');
+            card.classList.add('scale-100');
+          }
+        }
+
+        function closeGiftModal() {
+          const modal = document.getElementById('gift-modal');
+          const card = document.getElementById('gift-modal-card');
+          if (modal && card) {
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            card.classList.remove('scale-100');
+            card.classList.add('scale-95');
+          }
+        }
+
+        // Toast Notification System
+        let toastTimeout = null;
+        function showToast(msg) {
+          const toast = document.getElementById('toast-notification');
+          const toastMsg = document.getElementById('toast-message');
+          if (!toast || !toastMsg) return;
+
+          toastMsg.textContent = msg;
+          toast.classList.remove('opacity-0', 'pointer-events-none');
+          toast.classList.add('opacity-100');
+
+          if (toastTimeout) clearTimeout(toastTimeout);
+          toastTimeout = setTimeout(() => {
+            toast.classList.remove('opacity-100');
+            toast.classList.add('opacity-0', 'pointer-events-none');
+          }, 3000);
+        }
+
+        // Copy PIX Key Logic with Integrity Protection & Visual Feedback
+        let copyTimeout = null;
+        function copyPixKey() {
+          const pixRaw = decodeSafe(SECURE_DATA.pixRaw);
+          const btnText = document.getElementById('copy-btn-text');
+          const btn = document.getElementById('copy-pix-btn');
+
+          if (!pixRaw || !navigator.clipboard) {
+            showToast('Não foi possível copiar. Tente manualmente.');
             return;
           }
 
-          const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+          navigator.clipboard.writeText(pixRaw).then(() => {
+            showToast('Chave PIX copiada com sucesso! ✓');
+            triggerSparklesBurst(window.innerWidth / 2, window.innerHeight / 2);
 
-          daysEl.textContent = String(days).padStart(2, '0');
-          hoursEl.textContent = String(hours).padStart(2, '0');
-          minsEl.textContent = String(minutes).padStart(2, '0');
-          secsEl.textContent = String(seconds).padStart(2, '0');
-        }
+            if (btnText && btn) {
+              const originalText = 'Copiar Chave PIX';
+              btnText.textContent = 'Chave copiada com sucesso! ✓';
+              btn.classList.remove('bg-deepolive-900', 'text-gold-200');
+              btn.classList.add('bg-emerald-700', 'text-white');
 
-        updateTimer();
-        setInterval(updateTimer, 1000);
-      }
-
-      // Scroll Reveal Logic
-      function checkScrollReveal() {
-        const reveals = document.querySelectorAll('.reveal-on-scroll');
-        const windowHeight = window.innerHeight;
-
-        reveals.forEach(el => {
-          const elementTop = el.getBoundingClientRect().top;
-          if (elementTop < windowHeight - 40) {
-            el.classList.add('is-visible');
-          }
-        });
-      }
-
-      // Gift Modal Logic
-      function openGiftModal() {
-        const modal = document.getElementById('gift-modal');
-        const card = document.getElementById('gift-modal-card');
-        if (modal && card) {
-          modal.classList.remove('opacity-0', 'pointer-events-none');
-          modal.classList.add('opacity-100');
-          card.classList.remove('scale-95');
-          card.classList.add('scale-100');
-        }
-      }
-
-      function closeGiftModal() {
-        const modal = document.getElementById('gift-modal');
-        const card = document.getElementById('gift-modal-card');
-        if (modal && card) {
-          modal.classList.remove('opacity-100');
-          modal.classList.add('opacity-0', 'pointer-events-none');
-          card.classList.remove('scale-100');
-          card.classList.add('scale-95');
-        }
-      }
-
-      // Toast Notification System
-      let toastTimeout = null;
-      function showToast(msg) {
-        const toast = document.getElementById('toast-notification');
-        const toastMsg = document.getElementById('toast-message');
-        if (!toast || !toastMsg) return;
-
-        toastMsg.textContent = msg;
-        toast.classList.remove('opacity-0', 'pointer-events-none');
-        toast.classList.add('opacity-100');
-
-        if (toastTimeout) clearTimeout(toastTimeout);
-        toastTimeout = setTimeout(() => {
-          toast.classList.remove('opacity-100');
-          toast.classList.add('opacity-0', 'pointer-events-none');
-        }, 3000);
-      }
-
-      // Copy PIX Key Logic with Integrity Protection & Visual Feedback
-      let copyTimeout = null;
-      function copyPixKey() {
-        const pixRaw = decodeSafe(SECURE_DATA.pixRaw);
-        const btnText = document.getElementById('copy-btn-text');
-        const btn = document.getElementById('copy-pix-btn');
-
-        if (!pixRaw || !navigator.clipboard) {
-          showToast('Não foi possível copiar. Tente manualmente.');
-          return;
-        }
-
-        navigator.clipboard.writeText(pixRaw).then(() => {
-          showToast('Chave PIX copiada com sucesso! ✓');
-          triggerSparklesBurst(window.innerWidth / 2, window.innerHeight / 2);
-
-          if (btnText && btn) {
-            const originalText = 'Copiar Chave PIX';
-            btnText.textContent = 'Chave copiada com sucesso! ✓';
-            btn.classList.remove('bg-deepolive-900', 'text-gold-200');
-            btn.classList.add('bg-emerald-700', 'text-white');
-
-            if (copyTimeout) clearTimeout(copyTimeout);
-            copyTimeout = setTimeout(() => {
-              btnText.textContent = originalText;
-              btn.classList.remove('bg-emerald-700', 'text-white');
-              btn.classList.add('bg-deepolive-900', 'text-gold-200');
-            }, 2500);
-          }
-        }).catch(() => {
-          showToast('Não foi possível copiar. Tente manualmente.');
-        });
-      }
-
-      // Event Listeners Registration
-      window.addEventListener('scroll', checkScrollReveal, { passive: true });
-
-      document.addEventListener('DOMContentLoaded', () => {
-        hydrateProtectedData();
-        initCountdown();
-        checkScrollReveal();
-
-        const envelope = document.getElementById('envelope-screen');
-        if (envelope) {
-          envelope.addEventListener('click', openInvitation);
-          envelope.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              openInvitation(e);
+              if (copyTimeout) clearTimeout(copyTimeout);
+              copyTimeout = setTimeout(() => {
+                btnText.textContent = originalText;
+                btn.classList.remove('bg-emerald-700', 'text-white');
+                btn.classList.add('bg-deepolive-900', 'text-gold-200');
+              }, 2500);
             }
+          }).catch(() => {
+            showToast('Não foi possível copiar. Tente manualmente.');
           });
         }
 
-        document.getElementById('music-toggle-btn')?.addEventListener('click', toggleMusic);
-        document.getElementById('open-gift-modal-btn')?.addEventListener('click', openGiftModal);
-        document.getElementById('close-gift-modal-top')?.addEventListener('click', closeGiftModal);
-        document.getElementById('close-gift-modal-bottom')?.addEventListener('click', closeGiftModal);
-        document.getElementById('copy-pix-btn')?.addEventListener('click', copyPixKey);
+        // Event Listeners Registration
+        window.addEventListener('scroll', checkScrollReveal, { passive: true });
 
-        document.getElementById('gift-modal')?.addEventListener('click', function (e) {
-          if (e.target === this) closeGiftModal();
-        });
+        document.addEventListener('DOMContentLoaded', () => {
+          hydrateProtectedData();
+          initCountdown();
+          checkScrollReveal();
 
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape') closeGiftModal();
+          const envelope = document.getElementById('envelope-screen');
+          if (envelope) {
+            envelope.addEventListener('click', openInvitation);
+            envelope.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openInvitation(e);
+              }
+            });
+          }
+
+          document.getElementById('music-toggle-btn')?.addEventListener('click', toggleMusic);
+          document.getElementById('open-gift-modal-btn')?.addEventListener('click', openGiftModal);
+          document.getElementById('close-gift-modal-top')?.addEventListener('click', closeGiftModal);
+          document.getElementById('close-gift-modal-bottom')?.addEventListener('click', closeGiftModal);
+          document.getElementById('copy-pix-btn')?.addEventListener('click', copyPixKey);
+
+          document.getElementById('gift-modal')?.addEventListener('click', function (e) {
+            if (e.target === this) closeGiftModal();
+          });
+
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeGiftModal();
+          });
         });
-      });
-    })();
+      })();
   </script>
 
 </body>
