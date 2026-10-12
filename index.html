@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Security & Privacy Hardening Meta Tags -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <meta name="referrer" content="no-referrer" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; media-src 'self' https://cdn.pixabay.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none';" />
+  <title>Convite de Casamento - Hevelyn & Jonathas</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Google Fonts: Bodoni Moda, Cinzel, Cormorant Garamond, Montserrat, Alex Brush -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind Custom Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            deepolive: {
+              950: '#141B15',
+              900: '#1E281F',
+              850: '#243126',
+              800: '#283629',
+              700: '#344535',
+              600: '#435844',
+            },
+            satinolive: {
+              300: '#8A9E66',
+              400: '#6B8049',
+              500: '#546938',
+              600: '#43552A',
+              700: '#31401D',
+            },
+            gold: {
+              100: '#FBF0D3',
+              200: '#FBF2D8',
+              300: '#F4E3B2',
+              400: '#E5C158',
+              500: '#D4A83B',
+              600: '#B98A28',
+              700: '#9C721A',
+              800: '#7A5812'
+            },
+            linen: '#FAF7F2',
+          },
+          fontFamily: {
+            bodoni: ['"Bodoni Moda"', 'serif'],
+            cinzel: ['"Cinzel"', 'serif'],
+            garamond: ['"Cormorant Garamond"', 'serif'],
+            montserrat: ['"Montserrat"', 'sans-serif'],
+            script: ['"Alex Brush"', 'cursive'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS for Luxury Visual Effects, Animations & 3D Wax Seal -->
+  <style>
+    /* Luxury Emerald Envelope Cover - Encaixe Completo com Rolagem Livre */
+    .envelope-cover-wrapper {
+      background: linear-gradient(to bottom, #1d291f 0%, #161b15 100%);
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .cover-img-sharp {
+      width: 100%;
+      height: auto;
+      display: block;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: high-quality;
+    }
+
+    /* Envelope Opening Animation */
+    #envelope-screen {
+      transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.85s ease;
+    }
+
+    #envelope-screen.opened {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Paper Texture for Invitation Card */
+    .paper-texture {
+      background-color: #FAF7F2;
+      background-image: radial-gradient(#E5DFD3 0.8px, transparent 0.8px);
+      background-size: 14px 14px;
+    }
+
+    /* Particle Canvas Overlay */
+    #particles-canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 60;
+    }
+
+    /* Staggered Scroll Reveal Animations */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Audio Waves Equalizer Animation */
+    .bar {
+      width: 2px;
+      height: 12px;
+      background-color: #E5C158;
+      animation: audioWave 1.2s infinite ease-in-out alternate;
+    }
+
+    .bar:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .bar:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .bar:nth-child(3) {
+      animation-delay: 0.5s;
+    }
+
+    @keyframes audioWave {
+      0% {
+        height: 4px;
+      }
+
+      100% {
+        height: 16px;
+      }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #161b15;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #D4A83B;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body
+  class="bg-stone-950 text-stone-800 antialiased font-montserrat flex justify-center selection:bg-deepolive-800 selection:text-white min-h-screen">
+
+  <!-- Main Mobile Frame Container (Centered max-w-[430px]) -->
+  <div class="relative w-full max-w-[430px] min-h-screen bg-linen shadow-2xl overflow-x-hidden flex flex-col mx-auto">
+
+    <!-- Particle Canvas for Golden Sparkles Burst -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Floating Audio Control Button (Appears after envelope opens) -->
+    <button id="music-toggle-btn" type="button" aria-label="Tocar ou pausar música de fundo"
+      class="fixed top-4 right-4 z-40 w-10 h-10 rounded-full bg-deepolive-900/90 text-gold-300 backdrop-blur-md border border-gold-400/50 shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 opacity-0 pointer-events-none">
+      <!-- Equalizer Animated Icon when playing -->
+      <div id="music-playing-icon" class="flex items-center gap-0.5 hidden">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <!-- Music Note Icon when paused -->
+      <svg id="music-paused-icon" class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"></path>
+      </svg>
+    </button>
+
+    <!-- Background Audio Element -->
+    <audio id="wedding-audio" loop preload="auto">
+      <source
+        src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=wedding-march-piano-ambient-112190.mp3"
+        type="audio/mpeg">
+    </audio>
+
+    <!-- ==========================================
+         ETAPA 1: O ENVELOPE VIRTUAL INTERATIVO
+         Design 4K Ultra-HD 100% idêntico à foto
+         Clique em qualquer parte para abrir
+         ========================================== -->
+    <section id="envelope-screen" role="button" tabindex="0"
+      aria-label="Capa do Convite de Casamento - Jonathas e Hevelyn. Clique em qualquer parte para abrir o convite."
+      class="relative w-full z-50 envelope-cover-wrapper shadow-2xl cursor-pointer select-none">
+
+      <img id="cover-image" src="capa_oficial_4k.webp"
+        alt="Convite de Casamento - Jonathas & Hevelyn" class="cover-img-sharp" draggable="false" />
+
+    </section>
+
+    <!-- ==========================================
+         ETAPA 2: CARTÃO INTERNO DO CONVITE
+         ========================================== -->
+    <main id="invitation-content"
+      class="hidden paper-texture min-h-screen px-6 py-10 flex flex-col items-center text-center">
+
+      <!-- Romantic Couple Photo with Editorial Arch Frame -->
+      <div
+        class="reveal-on-scroll relative w-full max-w-[340px] aspect-[4/5] rounded-t-full rounded-b-2xl overflow-hidden shadow-xl border-[4px] border-white mb-8 bg-stone-200">
+        <img src="FOTO.jpeg" alt="Foto do Casal Hevelyn e Jonathas"
+          class="w-full h-full object-cover object-top filter brightness-[1.02]" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none">
+        </div>
+      </div>
+
+      <!-- Biblical Verse Section -->
+      <section class="reveal-on-scroll max-w-[330px] mb-8">
+        <p class="font-garamond italic text-base sm:text-lg text-stone-700 leading-relaxed font-normal">
+          “Para que todos vejam, e saibam, e considerem, e juntamente entendam que a mão do Senhor fez isto...”
+        </p>
+        <span class="block font-cinzel text-[11px] tracking-[0.35em] text-deepolive-800 mt-2.5 font-semibold uppercase">
+          ISAÍAS 41:20
+        </span>
+      </section>
+
+      <!-- Decorative Divider -->
+      <div class="reveal-on-scroll flex items-center justify-center gap-3 mb-6 text-gold-500/70">
+        <span class="h-[1px] w-12 bg-gold-400/40"></span>
+        <span class="font-garamond italic text-sm text-gold-600">✦</span>
+        <span class="h-[1px] w-12 bg-gold-400/40"></span>
+      </div>
+
+      <!-- Couple Names in Luxury Editorial Bodoni Typography -->
+      <header class="reveal-on-scroll my-3">
+        <h1 class="font-bodoni font-light text-3xl sm:text-4xl text-stone-900 tracking-[0.2em] uppercase leading-tight">
+          JONATHAS
+        </h1>
+        <div class="flex items-center justify-center gap-3 my-1">
+          <div class="w-10 h-[1px] bg-gold-400/50"></div>
+          <span class="font-garamond italic text-3xl text-gold-600 font-normal">&amp;</span>
+          <div class="w-10 h-[1px] bg-gold-400/50"></div>
+        </div>
+        <h1 class="font-bodoni font-light text-3xl sm:text-4xl text-stone-900 tracking-[0.2em] uppercase leading-tight">
+          HEVELYN
+        </h1>
+      </header>
+
+      <!-- Highlight Banner Ribbon -->
+      <div
+        class="reveal-on-scroll w-full max-w-[350px] bg-deepolive-900 text-white py-3.5 px-4 rounded-md shadow-md my-7 border-y border-gold-400/60 relative overflow-hidden">
+        <div class="absolute inset-x-0 top-0 h-[1px] bg-gold-300/40"></div>
+        <p class="font-cinzel text-xs md:text-sm tracking-[0.18em] uppercase font-light text-gold-100">
+          Convidamos você para celebrar o nosso casamento
+        </p>
+        <div class="absolute inset-x-0 bottom-0 h-[1px] bg-gold-300/40"></div>
+      </div>
+
+      <!-- Date & Time Section -->
+      <section class="reveal-on-scroll flex flex-col items-center mb-8 w-full max-w-[340px]">
+        <span class="font-cinzel text-xs tracking-[0.35em] text-deepolive-800 font-semibold uppercase mb-2">
+          JANEIRO / 2027
+        </span>
+
+        <!-- Highlight Grid with Vertical Gold Separators -->
+        <div
+          class="flex items-center justify-center gap-4 my-2 text-stone-800 w-full py-2 border-y border-stone-200/60">
+          <span class="font-cinzel text-xs tracking-widest uppercase text-stone-600 w-24 text-right">Sábado</span>
+          <span class="w-[1.5px] h-10 bg-gold-500/70"></span>
+          <span class="font-bodoni text-5xl font-light text-deepolive-900 px-1">30</span>
+          <span class="w-[1.5px] h-10 bg-gold-500/70"></span>
+          <span class="font-cinzel text-xs tracking-widest text-stone-600 w-24 text-left">15:00H</span>
+        </div>
+      </section>
+
+      <!-- LIVE COUNTDOWN TIMER (Contagem Regressiva) -->
+      <section
+        class="reveal-on-scroll w-full max-w-[350px] mb-9 bg-white/70 p-4 rounded-xl border border-stone-200 shadow-sm backdrop-blur-xs">
+        <span class="block font-cinzel text-[10px] tracking-[0.3em] uppercase text-deepolive-900 font-semibold mb-3">
+          CONTAGEM REGRESSIVA PARA O GRANDE DIA
+        </span>
+        <div class="grid grid-cols-4 gap-2 text-stone-800">
+          <div class="flex flex-col items-center p-2 rounded-lg bg-stone-50 border border-gold-400/30">
+            <span id="timer-days" class="font-bodoni text-2xl font-semibold text-deepolive-900">00</span>
+            <span class="font-montserrat text-[9px] uppercase tracking-wider text-stone-500 mt-0.5">Dias</span>
+          </div>
+          <div class="flex flex-col items-center p-2 rounded-lg bg-stone-50 border border-gold-400/30">
+            <span id="timer-hours" class="font-bodoni text-2xl font-semibold text-deepolive-900">00</span>
+            <span class="font-montserrat text-[9px] uppercase tracking-wider text-stone-500 mt-0.5">Horas</span>
+          </div>
+          <div class="flex flex-col items-center p-2 rounded-lg bg-stone-50 border border-gold-400/30">
+            <span id="timer-minutes" class="font-bodoni text-2xl font-semibold text-deepolive-900">00</span>
+            <span class="font-montserrat text-[9px] uppercase tracking-wider text-stone-500 mt-0.5">Min</span>
+          </div>
+          <div class="flex flex-col items-center p-2 rounded-lg bg-stone-50 border border-gold-400/30">
+            <span id="timer-seconds" class="font-bodoni text-2xl font-semibold text-deepolive-900">00</span>
+            <span class="font-montserrat text-[9px] uppercase tracking-wider text-stone-500 mt-0.5">Seg</span>
+          </div>
+        </div>
+
+        <!-- Add to Calendar Button -->
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casamento+Hevelyn+%26+Jonathas&dates=20270130T180000Z/20270130T220000Z&details=Casamento+de+Hevelyn+e+Jonathas!+Salvar+a+data.&location=Rua+da+Constitui%C3%A7%C3%A3o,+128+-+Parque+Alvorada,+Suzano+-+SP,+08655-050"
+          target="_blank" rel="noopener noreferrer"
+          class="mt-3.5 inline-flex items-center gap-2 text-[11px] font-cinzel tracking-wider text-gold-700 hover:text-gold-800 font-semibold uppercase transition-colors">
+          <svg class="w-3.5 h-3.5 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          <span>Salvar na minha agenda (Google Calendar)</span>
+        </a>
+      </section>
+
+      <!-- Location Address Section -->
+      <section class="reveal-on-scroll flex flex-col items-center mb-9 px-2 max-w-[340px]">
+        <div
+          class="flex items-center justify-center w-9 h-9 rounded-full bg-deepolive-900 text-gold-400 mb-2.5 shadow-sm">
+          <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd"
+              d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <span class="font-cinzel text-xs tracking-[0.2em] text-deepolive-900 font-semibold uppercase mb-1">LOCAL DA
+          CERIMÔNIA</span>
+        <p class="font-garamond text-base sm:text-lg text-stone-700 leading-snug italic max-w-[320px]">
+          Rua da Constituição, 128 - Parque Alvorada, Suzano - SP, 08655-050
+        </p>
+      </section>
+
+      <!-- Decorative Divider -->
+      <div class="reveal-on-scroll flex items-center justify-center gap-3 mb-8 text-gold-600/70">
+        <span class="h-[1px] w-14 bg-stone-300"></span>
+        <span class="font-garamond italic text-sm">✦</span>
+        <span class="h-[1px] w-14 bg-stone-300"></span>
+      </div>
+
+      <!-- ==========================================
+           ETAPA 3: BOTÕES DE AÇÃO INTERATIVA
+           ========================================== -->
+      <section class="reveal-on-scroll w-full max-w-[350px] flex flex-col items-center space-y-3.5 mb-10">
+
+        <!-- Button 1: Como Chegar (Google Maps) -->
+        <a href="https://www.google.com/maps/search/?api=1&query=Rua+da+Constitui%C3%A7%C3%A3o,+128+-+Parque+Alvorada,+Suzano+-+SP,+08655-050"
+          target="_blank" rel="noopener noreferrer"
+          class="w-full flex items-center gap-4 p-4 rounded-xl bg-white shadow-sm hover:shadow-md border border-stone-200/90 transition-all duration-300 group hover:border-gold-500/70 active:scale-[0.99]">
+          <div
+            class="w-11 h-11 rounded-full bg-deepolive-900 text-gold-300 flex items-center justify-center group-hover:bg-deepolive-800 transition-colors shadow-inner flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <div class="text-left flex-grow">
+            <span class="block font-cinzel text-xs tracking-wider text-stone-900 font-semibold uppercase">Saiba como
+              chegar</span>
+            <span class="block font-montserrat text-[10px] text-stone-500 tracking-wide mt-0.5">Abrir rota no Google
+              Maps / Waze</span>
+          </div>
+          <svg class="w-4 h-4 text-stone-300 group-hover:text-gold-600 transition-colors mr-1" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+
+        <!-- Button 2: Confirmar Presença (WhatsApp RSVP) -->
+        <a id="whatsapp-rsvp-link" href="#confirmar-presenca"
+          target="_blank" rel="noopener noreferrer"
+          class="w-full flex items-center gap-4 p-4 rounded-xl bg-white shadow-sm hover:shadow-md border border-stone-200/90 transition-all duration-300 group hover:border-gold-500/70 active:scale-[0.99]">
+          <div
+            class="w-11 h-11 rounded-full bg-deepolive-900 text-gold-300 flex items-center justify-center group-hover:bg-deepolive-800 transition-colors shadow-inner flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div class="text-left flex-grow">
+            <span class="block font-cinzel text-xs tracking-wider text-stone-900 font-semibold uppercase">Confirmar
+              presença</span>
+            <span class="block font-montserrat text-[10px] text-stone-500 tracking-wide mt-0.5">Favor confirmar até 20
+              de Dezembro de 2026</span>
+          </div>
+          <svg class="w-4 h-4 text-stone-400 group-hover:text-gold-600 transition-colors mr-1" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+
+        <!-- Button 3: Lista de Presentes & PIX (Triggers Modal) -->
+        <button id="open-gift-modal-btn" type="button"
+          class="w-full flex items-center gap-4 p-4 rounded-xl bg-white shadow-sm hover:shadow-md border border-stone-200/90 transition-all duration-300 group hover:border-gold-500/70 text-left active:scale-[0.99]">
+          <div
+            class="w-11 h-11 rounded-full bg-deepolive-900 text-gold-300 flex items-center justify-center group-hover:bg-deepolive-800 transition-colors shadow-inner flex-shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V4a2 2 0 10-2 2h2zm-7 4h14v10a1 1 0 01-1 1H6a1 1 0 01-1-1V12z">
+              </path>
+            </svg>
+          </div>
+          <div class="text-left flex-grow">
+            <span class="block font-cinzel text-xs tracking-wider text-stone-900 font-semibold uppercase">Lista de
+              Presentes &amp; PIX</span>
+            <span class="block font-montserrat text-[10px] text-stone-500 tracking-wide mt-0.5">Opções de PIX e Lista de
+              Presentes</span>
+          </div>
+          <svg class="w-4 h-4 text-stone-400 group-hover:text-gold-600 transition-colors mr-1" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+
+      </section>
+
+      <!-- Footer -->
+      <footer
+        class="reveal-on-scroll mt-8 pb-6 flex flex-col items-center border-t border-stone-200/80 pt-8 w-full max-w-[340px]">
+        <p class="font-bodoni text-xl tracking-[0.18em] uppercase text-deepolive-900 font-light mb-1.5">
+          Esperamos por você
+        </p>
+        <p class="font-garamond italic text-sm text-stone-600 tracking-wide">
+          Com carinho, Jonathas &amp; Hevelyn
+        </p>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- ==========================================
+       MODAL INTERATIVO: LISTA DE PRESENTES & PIX
+       ========================================== -->
+  <div id="gift-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div
+      class="relative w-full max-w-[390px] bg-linen rounded-2xl shadow-2xl border border-gold-400/40 overflow-hidden transform scale-95 transition-transform duration-300 paper-texture"
+      id="gift-modal-card">
+
+      <!-- Modal Header -->
+      <div class="bg-deepolive-900 text-white p-5 text-center relative border-b border-gold-400/50">
+        <button id="close-gift-modal-top" type="button"
+          class="absolute top-4 right-4 text-stone-300 hover:text-gold-400 transition-colors focus:outline-none"
+          aria-label="Fechar modal">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <div class="flex items-center justify-center gap-2 mb-1">
+          <div class="w-6 h-[1px] bg-gold-400/50"></div>
+          <span class="font-cinzel text-[10px] tracking-[0.3em] uppercase text-gold-300">PRESENTES &amp; PIX</span>
+          <div class="w-6 h-[1px] bg-gold-400/50"></div>
+        </div>
+        <h3 class="font-bodoni text-lg text-white font-light tracking-wider uppercase">Sua presença é nosso maior
+          presente</h3>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 space-y-6 max-h-[80vh] overflow-y-auto">
+
+        <!-- Opção 1: Chave PIX -->
+        <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm text-left relative">
+          <div class="flex items-center gap-2.5 mb-2.5">
+            <div
+              class="w-7 h-7 rounded-full bg-deepolive-900 text-gold-400 flex items-center justify-center text-xs font-bold">
+              ✦
+            </div>
+            <h4 class="font-cinzel text-xs tracking-wider text-deepolive-900 font-semibold uppercase">Opção 1 - Chave
+              PIX</h4>
+          </div>
+
+          <p class="font-montserrat text-xs text-stone-600 mb-3 leading-relaxed">
+            Caso prefira nos abençoar com um presente em dinheiro, disponibilizamos a chave PIX abaixo:
+          </p>
+
+          <div class="bg-stone-50 p-3 rounded-lg border border-stone-200/90 mb-3 space-y-1">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] uppercase font-cinzel text-stone-400">Chave PIX (Telefone):</span>
+              <span id="pix-key-display" class="font-mono text-sm font-semibold text-deepolive-900"
+                 translate="no">•••</span>
+            </div>
+            <div class="text-[11px] text-stone-600 pt-1 border-t border-stone-200/60">
+              <span class="font-medium text-stone-700">Favorecido:</span> <span id="pix-holder-display"
+                translate="no">•••</span><br />
+              <span class="font-medium text-stone-700">Banco:</span> <span id="pix-bank-display"
+                translate="no">•••</span>
+            </div>
+          </div>
+
+          <button id="copy-pix-btn" type="button"
+            class="w-full py-2.5 px-4 bg-deepolive-900 hover:bg-deepolive-800 text-gold-200 rounded-lg text-xs font-cinzel font-semibold tracking-wider uppercase transition-all duration-200 shadow flex items-center justify-center gap-2 border border-gold-500/40">
+            <svg class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
+              </path>
+            </svg>
+            <span id="copy-btn-text">Copiar Chave PIX</span>
+          </button>
+        </div>
+
+        <!-- Opção 2: Lista Final Feliz -->
+        <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm text-left">
+          <div class="flex items-center gap-2.5 mb-2.5">
+            <div
+              class="w-7 h-7 rounded-full bg-deepolive-900 text-gold-400 flex items-center justify-center text-xs font-bold">
+              ✦
+            </div>
+            <h4 class="font-cinzel text-xs tracking-wider text-deepolive-900 font-semibold uppercase">Opção 2 - Lista de
+              Presentes</h4>
+          </div>
+          <p class="font-montserrat text-xs text-stone-600 mb-3.5 leading-relaxed">
+            Acesse nossa lista virtual de casamentos no Final Feliz:
+          </p>
+
+          <a href="https://www.finalfeliz.de/hevelyn-costa--jonathas-vieira" target="_blank" rel="noopener noreferrer"
+            class="w-full py-2.5 px-4 bg-white hover:bg-stone-50 text-deepolive-900 rounded-lg text-xs font-cinzel font-semibold tracking-wider uppercase transition-all duration-200 shadow-sm border border-deepolive-800/40 flex items-center justify-center gap-2">
+            <span>Acessar Lista no Final Feliz</span>
+            <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer / Close Button -->
+      <div class="p-4 bg-stone-100 border-t border-stone-200 text-center">
+        <button id="close-gift-modal-bottom" type="button"
+          class="px-6 py-2 bg-stone-300 hover:bg-stone-400 text-stone-800 rounded-full text-xs font-montserrat font-medium tracking-wider uppercase transition-colors">
+          Fechar
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-notification"
+    class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-full bg-deepolive-950 text-gold-200 text-xs font-cinzel tracking-wider border border-gold-400/50 shadow-2xl opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2">
+    <svg class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+    </svg>
+    <span id="toast-message">Chave PIX copiada com sucesso!</span>
+  </div>
+
+  <!-- ==========================================
+       VANILLA JS LOGIC (ENCAPSULATED & HARDENED)
+       ========================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      // Obfuscated personal data (Anti-Scraper / Anti-Bot protection on public repos)
+      const SECURE_DATA = Object.freeze({
+        pixDisplay: 'KDExKSA5NjYyMS04NTEw',
+        pixRaw: 'MTE5NjYyMTg1MTA=',
+        pixHolder: 'Sm9uYXRoYXMgVmllaXJhIEJhdGlzdGEgZGFzIERvcmVz',
+        pixBank: 'QmFuY28gTmVvbg==',
+        waPhone: 'NTUxMTk3Mzk5Njc0NQ=='
+      });
+
+      function decodeSafe(b64) {
+        try {
+          return window.atob(b64);
+        } catch (e) {
+          return '';
+        }
+      }
+
+      function hydrateProtectedData() {
+        const pixDisplayEl = document.getElementById('pix-key-display');
+        const pixHolderEl = document.getElementById('pix-holder-display');
+        const pixBankEl = document.getElementById('pix-bank-display');
+        const waLinkEl = document.getElementById('whatsapp-rsvp-link');
+
+        if (pixDisplayEl) pixDisplayEl.textContent = decodeSafe(SECURE_DATA.pixDisplay);
+        if (pixHolderEl) pixHolderEl.textContent = decodeSafe(SECURE_DATA.pixHolder);
+        if (pixBankEl) pixBankEl.textContent = decodeSafe(SECURE_DATA.pixBank);
+
+        if (waLinkEl) {
+          const phone = decodeSafe(SECURE_DATA.waPhone);
+          const msg = 'Ol%C3%A1%2C%20Hevelyn%20e%20Jonathas!%20Gostaria%20de%20confirmar%20minha%20presen%C3%A7a%20no%20casamento%20de%20voc%C3%AAs%20no%20dia%2030%2F01%2F2027%2C%20%C3%A0s%2015h.%20Ser%C3%A1%20uma%20alegria%20e%20um%20privil%C3%A9gio%20enorme%20celebrar%20esse%20dia%20t%C3%A3o%20especial%20ao%20lado%20de%20voc%C3%AAs!%20%F0%9F%A5%B5%F0%9F%91%B0%E2%9C%A8';
+          waLinkEl.setAttribute('href', 'https://wa.me/' + phone + '?text=' + msg);
+        }
+      }
+
+      // Cover image fallback handler
+      const coverImg = document.getElementById('cover-image');
+      if (coverImg) {
+        coverImg.addEventListener('error', function handleImgError() {
+          coverImg.removeEventListener('error', handleImgError);
+          coverImg.src = 'capa_oficial_4k.jpg';
+        });
+      }
+
+      // Audio Player Toggle Logic
+      let isPlaying = false;
+      function toggleMusic() {
+        const audio = document.getElementById('wedding-audio');
+        const playingIcon = document.getElementById('music-playing-icon');
+        const pausedIcon = document.getElementById('music-paused-icon');
+
+        if (!audio) return;
+
+        if (isPlaying) {
+          audio.pause();
+          isPlaying = false;
+          playingIcon?.classList.add('hidden');
+          pausedIcon?.classList.remove('hidden');
+        } else {
+          audio.play().then(() => {
+            isPlaying = true;
+            playingIcon?.classList.remove('hidden');
+            pausedIcon?.classList.add('hidden');
+          }).catch(() => {
+            // Autoplay prevented by browser policy
+          });
+        }
+      }
+
+      // Golden Sparkles Particle Burst Effect
+      function triggerSparklesBurst(x, y) {
+        const canvas = document.getElementById('particles-canvas');
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const colors = ['#E5C158', '#FBF0D3', '#D4A83B', '#FFFFFF'];
+
+        for (let i = 0; i < 45; i++) {
+          particles.push({
+            x: x || window.innerWidth / 2,
+            y: y || window.innerHeight / 2,
+            radius: Math.random() * 3.5 + 1,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            vx: (Math.random() - 0.5) * 8,
+            vy: (Math.random() - 0.5) * 8 - 2,
+            alpha: 1,
+            decay: Math.random() * 0.02 + 0.015
+          });
+        }
+
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          let active = false;
+
+          particles.forEach(p => {
+            if (p.alpha > 0) {
+              active = true;
+              p.x += p.vx;
+              p.y += p.vy;
+              p.alpha -= p.decay;
+
+              ctx.save();
+              ctx.globalAlpha = Math.max(0, p.alpha);
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+              ctx.fillStyle = p.color;
+              ctx.shadowBlur = 8;
+              ctx.shadowColor = p.color;
+              ctx.fill();
+              ctx.restore();
+            }
+          });
+
+          if (active) {
+            requestAnimationFrame(animate);
+          } else {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+          }
+        }
+        animate();
+      }
+
+      // Function to open the virtual envelope
+      let isEnvelopeOpened = false;
+      function openInvitation(event) {
+        if (isEnvelopeOpened) return;
+        isEnvelopeOpened = true;
+
+        const envelope = document.getElementById('envelope-screen');
+        const mainContent = document.getElementById('invitation-content');
+        const musicBtn = document.getElementById('music-toggle-btn');
+
+        if (mainContent) {
+          mainContent.classList.remove('hidden');
+        }
+
+        if (envelope) {
+          envelope.style.position = 'fixed';
+          envelope.style.inset = '0';
+          envelope.style.maxWidth = '430px';
+          envelope.style.margin = '0 auto';
+          envelope.classList.add('opened');
+          setTimeout(() => {
+            envelope.style.display = 'none';
+          }, 900);
+        }
+
+        window.scrollTo({ top: 0, behavior: 'instant' });
+
+        // Sparkles burst at click position
+        let clickX = window.innerWidth / 2;
+        let clickY = window.innerHeight * 0.412;
+
+        if (event && event.clientX && event.clientY) {
+          clickX = event.clientX;
+          clickY = event.clientY;
+        }
+        triggerSparklesBurst(clickX, clickY);
+
+        // Show music button & attempt soft autoplay
+        if (musicBtn) {
+          setTimeout(() => {
+            musicBtn.classList.remove('opacity-0', 'pointer-events-none');
+            musicBtn.classList.add('opacity-100');
+          }, 500);
+        }
+
+        // Try autoplaying soft audio on user click
+        const audio = document.getElementById('wedding-audio');
+        if (audio) {
+          audio.volume = 0.4;
+          audio.play().then(() => {
+            isPlaying = true;
+            document.getElementById('music-playing-icon')?.classList.remove('hidden');
+            document.getElementById('music-paused-icon')?.classList.add('hidden');
+          }).catch(() => {
+            // Autoplay fallback
+          });
+        }
+
+        // Trigger scroll reveal for visible items
+        setTimeout(checkScrollReveal, 300);
+      }
+
+      // Live Countdown Clock Logic (Target: 30 Jan 2027, 15:00)
+      function initCountdown() {
+        const targetDate = new Date('2027-01-30T15:00:00-03:00').getTime();
+
+        function updateTimer() {
+          const now = new Date().getTime();
+          const difference = targetDate - now;
+
+          const daysEl = document.getElementById('timer-days');
+          const hoursEl = document.getElementById('timer-hours');
+          const minsEl = document.getElementById('timer-minutes');
+          const secsEl = document.getElementById('timer-seconds');
+
+          if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+          if (difference <= 0) {
+            daysEl.textContent = '00';
+            hoursEl.textContent = '00';
+            minsEl.textContent = '00';
+            secsEl.textContent = '00';
+            return;
+          }
+
+          const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+          daysEl.textContent = String(days).padStart(2, '0');
+          hoursEl.textContent = String(hours).padStart(2, '0');
+          minsEl.textContent = String(minutes).padStart(2, '0');
+          secsEl.textContent = String(seconds).padStart(2, '0');
+        }
+
+        updateTimer();
+        setInterval(updateTimer, 1000);
+      }
+
+      // Scroll Reveal Logic
+      function checkScrollReveal() {
+        const reveals = document.querySelectorAll('.reveal-on-scroll');
+        const windowHeight = window.innerHeight;
+
+        reveals.forEach(el => {
+          const elementTop = el.getBoundingClientRect().top;
+          if (elementTop < windowHeight - 40) {
+            el.classList.add('is-visible');
+          }
+        });
+      }
+
+      // Gift Modal Logic
+      function openGiftModal() {
+        const modal = document.getElementById('gift-modal');
+        const card = document.getElementById('gift-modal-card');
+        if (modal && card) {
+          modal.classList.remove('opacity-0', 'pointer-events-none');
+          modal.classList.add('opacity-100');
+          card.classList.remove('scale-95');
+          card.classList.add('scale-100');
+        }
+      }
+
+      function closeGiftModal() {
+        const modal = document.getElementById('gift-modal');
+        const card = document.getElementById('gift-modal-card');
+        if (modal && card) {
+          modal.classList.remove('opacity-100');
+          modal.classList.add('opacity-0', 'pointer-events-none');
+          card.classList.remove('scale-100');
+          card.classList.add('scale-95');
+        }
+      }
+
+      // Toast Notification System
+      let toastTimeout = null;
+      function showToast(msg) {
+        const toast = document.getElementById('toast-notification');
+        const toastMsg = document.getElementById('toast-message');
+        if (!toast || !toastMsg) return;
+
+        toastMsg.textContent = msg;
+        toast.classList.remove('opacity-0', 'pointer-events-none');
+        toast.classList.add('opacity-100');
+
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toast.classList.remove('opacity-100');
+          toast.classList.add('opacity-0', 'pointer-events-none');
+        }, 3000);
+      }
+
+      // Copy PIX Key Logic with Integrity Protection & Visual Feedback
+      let copyTimeout = null;
+      function copyPixKey() {
+        const pixRaw = decodeSafe(SECURE_DATA.pixRaw);
+        const btnText = document.getElementById('copy-btn-text');
+        const btn = document.getElementById('copy-pix-btn');
+
+        if (!pixRaw || !navigator.clipboard) {
+          showToast('Não foi possível copiar. Tente manualmente.');
+          return;
+        }
+
+        navigator.clipboard.writeText(pixRaw).then(() => {
+          showToast('Chave PIX copiada com sucesso! ✓');
+          triggerSparklesBurst(window.innerWidth / 2, window.innerHeight / 2);
+
+          if (btnText && btn) {
+            const originalText = 'Copiar Chave PIX';
+            btnText.textContent = 'Chave copiada com sucesso! ✓';
+            btn.classList.remove('bg-deepolive-900', 'text-gold-200');
+            btn.classList.add('bg-emerald-700', 'text-white');
+
+            if (copyTimeout) clearTimeout(copyTimeout);
+            copyTimeout = setTimeout(() => {
+              btnText.textContent = originalText;
+              btn.classList.remove('bg-emerald-700', 'text-white');
+              btn.classList.add('bg-deepolive-900', 'text-gold-200');
+            }, 2500);
+          }
+        }).catch(() => {
+          showToast('Não foi possível copiar. Tente manualmente.');
+        });
+      }
+
+      // Event Listeners Registration
+      window.addEventListener('scroll', checkScrollReveal, { passive: true });
+
+      document.addEventListener('DOMContentLoaded', () => {
+        hydrateProtectedData();
+        initCountdown();
+        checkScrollReveal();
+
+        const envelope = document.getElementById('envelope-screen');
+        if (envelope) {
+          envelope.addEventListener('click', openInvitation);
+          envelope.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openInvitation(e);
+            }
+          });
+        }
+
+        document.getElementById('music-toggle-btn')?.addEventListener('click', toggleMusic);
+        document.getElementById('open-gift-modal-btn')?.addEventListener('click', openGiftModal);
+        document.getElementById('close-gift-modal-top')?.addEventListener('click', closeGiftModal);
+        document.getElementById('close-gift-modal-bottom')?.addEventListener('click', closeGiftModal);
+        document.getElementById('copy-pix-btn')?.addEventListener('click', copyPixKey);
+
+        document.getElementById('gift-modal')?.addEventListener('click', function (e) {
+          if (e.target === this) closeGiftModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeGiftModal();
+        });
+      });
+    })();
+  </script>
+
+</body>
+
+</html>
