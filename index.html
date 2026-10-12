@@ -195,9 +195,7 @@
 
     <!-- Background Audio Element -->
     <audio id="wedding-audio" loop preload="auto">
-      <source
-        src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=wedding-march-piano-ambient-112190.mp3"
-        type="audio/mpeg">
+      <source src="musica.mp3" type="audio/mpeg">
     </audio>
 
     <!-- ==========================================
@@ -594,8 +592,8 @@
 
         if (waLinkEl) {
           const phone = decodeSafe(SECURE_DATA.waPhone);
-          const msg = 'Ol%C3%A1%2C%20Hevelyn%20e%20Jonathas!%20Gostaria%20de%20confirmar%20minha%20presen%C3%A7a%20no%20casamento%20de%20voc%C3%AAs%20no%20dia%2030%2F01%2F2027%2C%20%C3%A0s%2015h.%20Ser%C3%A1%20uma%20alegria%20e%20um%20privil%C3%A9gio%20enorme%20celebrar%20esse%20dia%20t%C3%A3o%20especial%20ao%20lado%20de%20voc%C3%AAs!%20%F0%9F%A5%B5%F0%9F%91%B0%E2%9C%A8';
-          waLinkEl.setAttribute('href', 'https://wa.me/' + phone + '?text=' + msg);
+          const textoWhatsapp = 'Olá, Hevelyn e Jonathas! Gostaria de confirmar minha presença no casamento de vocês no dia 30/01/2027, às 15h. Será uma alegria e um privilégio enorme celebrar esse dia tão especial ao lado de vocês! 🤵👰✨';
+          waLinkEl.setAttribute('href', 'https://wa.me/' + phone + '?text=' + encodeURIComponent(textoWhatsapp));
         }
       }
 
